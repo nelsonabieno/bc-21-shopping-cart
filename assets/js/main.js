@@ -1,3 +1,6 @@
-/**
- * Created by LENOVO on 10/25/16.
- */
+//
+
+$(document).ready(function (e) {
+	//alert('yoo');
+	$('.img_draggable').draggable();
+});
