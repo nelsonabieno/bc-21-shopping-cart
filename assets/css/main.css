@@ -1,21 +1,50 @@
 .zoomcart{
     font-size: 197px !important;
     width: 800px !important;
+    height: 350px;
     border: 3px #286090 solid;
     border-radius: 11px;
+    display: inherit !important;
 }
 
 .colorcart{
     color: cornflowerblue !important;
 }
 
-.cart_border{
-	
+.items{
+	width: 100% !important;
+    height: 350px !important;
+	border: 3px #f5f5f5 solid;
+    border-radius: 11px;
 }
 
 .center{
 	margin: auto;
     padding: 10px;
     width: 50%;
+}
+
+img{
+	height: 160px !important;
+    width: 180px !important;
+}
+
+.highlight{
+    background-color: yellow;
+}
+
+#cartMsg{
+    color: blue !important;
+    font-size: 30px !important;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #fff;
+    padding: 1px 7px !important;
+    background:#1f93c8;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    height: 49px;
 }
 

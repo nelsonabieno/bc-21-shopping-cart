@@ -10,32 +10,61 @@
 <body>
 <div class="container">
     <h2 class="center">MyShoppingCart</h2>
-    <div class="row">
+    <div class="row" >
         <p class="center">
             <a href="#" class="btn btn-info btn-lg">
-                <span class="glyphicon glyphicon-shopping-cart"></span> Number of Items  : 0
+                <span class="glyphicon glyphicon-shopping-cart"></span> Number of Items  : <span id="number_id"> 0 </span>
             </a>
             <a href="#" class="btn btn-info btn-lg">
-                <span class="glyphicon glyphicon-shopping-cart"></span> Total Cost: 0
+                <span class="glyphicon glyphicon-shopping-cart"></span> Total Cost: <span id="total_id"> 0 </span>
             </a>
         </p>
     </div>
-    <div class="row cart_border center">
-        <p> <span class="glyphicon glyphicon-shopping-cart zoomcart colorcart center"></span></p>
+    <div class="row zoomcart colorcart center" id="cartDiv">   
+         <span class=" center glyphicon glyphicon-shopping-cart"></span> 
     </div>
+    <br/> <br/>
     <div class="row">
-        <img src="assets/images/img2.jpg" alt="image" class="img-thumbnail img_draggable">
-        <img src="assets/images/img3.jpg" alt="image" class="img-thumbnail img_draggable">
-        <img src="assets/images/img4.jpg" alt="image" class="img-thumbnail img_draggable">
-        <img src="assets/images/img5.jpg" alt="image" class="img-thumbnail img_draggable">
-    </div>
+            <h2 class="center">Featured Items Up for Grabs!</h2> <br/> <br/>
+            <div class="col-md-4" id="item1" alt="Ankara Designer" >
+                <img class="img-thumbnail"  src="assets/images/img2.jpg" alt="Ankara Designer" data-toggle="tooltip" title="Ankara Designer"> <br/>
+               <button class="center product-price btn btn-info"> ₦1000</button>     
+            </div>
 
+            <div class="col-md-4" id="item2" alt="Boubou">
+                <img class="img-thumbnail"  src="assets/images/img3.jpg"  alt="Boubou" data-toggle="tooltip" title="Boubou"><br/>
+                <button class=" center product-price btn btn-info"> ₦2000</button> 
+            </div>
+
+            <div class="col-md-4" id="item3" alt="Milano Style">
+                <img class="img-thumbnail" src="assets/images/img4.jpg"  alt="Milano Style" data-toggle="tooltip" title="Milano Style"><br/>
+                <button class="center product-price btn btn-info"> ₦3000</button> 
+            </div>
+    </div><br/> <br/>
+    <div class="row">
+            <div class="col-md-4" id="item4" alt="Lilly Style">
+                <img class="img-thumbnail" src="assets/images/img5.jpg"  alt="Lilly Style" data-toggle="tooltip" title="Lilly Style"><br/>
+                <button class="center product-price btn btn-info"> ₦4000</button> 
+            </div>
+
+            <div class="col-md-4" id="item5" alt="Jay Jay Top">
+                <img class="img-thumbnail" src="assets/images/img6.jpg"  alt="Jay Jay Top" data-toggle="tooltip" title="Jay Jay Top"><br/>
+                <button class="center product-price btn btn-info"> ₦4000</button> 
+            </div>
+
+            <div class="col-md-4" id="item6" alt="Dolce and Gabana">
+                <img class="img-thumbnail" src="assets/images/img7.jpg"  alt="Dolce and Gabana" data-toggle="tooltip" title="Dolce and Gabana"><br/>
+                <button class="center product-price btn btn-info"> ₦4000</button> 
+            </div>
+    </div>
+    <br/> <br/>         
 </div>
 
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="assets/js/main.js"></script>
-
-</body>
+<script src="assets/js/bootstrap.min.js"></script>
+<!--  <p> <span class="glyphicon glyphicon-shopping-cart zoomcart colorcart center"></span></p>
+ --></body>
 </html>
