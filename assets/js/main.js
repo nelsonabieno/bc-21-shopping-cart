@@ -29,10 +29,12 @@ $(document).ready(function (e) {
 			var itemAlt=$(ui.draggable).attr("alt");
 			var id=$(ui.draggable).attr("id");
 			var text=$(ui.draggable).text();   
-			var search_index = text.indexOf("₦");  			//Gets the indexOf ₦ in defined text 
-			var sliced_text = text.slice(search_index+1);    
-			console.log(parseInt(sliced_text));    			//Converts text to a number
+			var searchIndex = text.indexOf("₦");  			//Gets the indexOf ₦ in defined text 
+			var slicedText = text.slice(searchIndex+1);    
+			var priceToAdd=parseInt(slicedText);    			//Converts text to a number
 			alert("Item "+itemAlt+" added to Cart");
+			var previousTotal=$("#price_id").text();
+			console.log(previousTotal);
 		},
 		
 		disabled:false,
