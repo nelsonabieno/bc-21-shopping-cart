@@ -3,20 +3,17 @@
 */
 
 $(document).ready(function (e) {
-var cartItemsPrices = [];
-var nOfItems=0;
-var updatedTotal ;
+	var cartItemsPrices = [];
+	var nOfItems=0;
+	var updatedTotal ;
 /* calls the toottip function  when document is ready */
 	$('[data-toggle="tooltip"]').tooltip();	
 /*
 * 	Make Items Draggable
 */
-	$('#item1').draggable(); //
-	$('#item2').draggable();
-	$('#item3').draggable();
-	$('#item4').draggable();
-	$('#item5').draggable();
-	$('#item6').draggable();
+	var noOfItemDivs=6; 				// Specify number of Item Divs
+	makeDraggable(noOfItemDivs); 		// Makes a function Call to  makeDraggable
+	
 /*
 *	Makes cartDiv droppable
 */
@@ -115,4 +112,12 @@ var updatedTotal ;
 	});
 });
 
+/*
+*	function to make  an element draggable
+*/
 
+function makeDraggable(noOfItemDivs){
+	for(var i=1;i<=noOfItemDivs;i++){ 
+		$('#item'+i).draggable(); 		//Attach draggable property 
+	}
+}
