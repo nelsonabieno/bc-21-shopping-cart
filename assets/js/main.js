@@ -3,7 +3,7 @@
 */
 
 $(document).ready(function (e) {
-
+var cartItemsPrices = [];
 /* calls the toottip function  when document is ready */
 	$('[data-toggle="tooltip"]').tooltip();	
 /*
@@ -30,11 +30,18 @@ $(document).ready(function (e) {
 			var id=$(ui.draggable).attr("id");
 			var text=$(ui.draggable).text();   
 			var searchIndex = text.indexOf("₦");  			//Gets the indexOf ₦ in defined text 
-			var slicedText = text.slice(searchIndex+1);    
-			var priceToAdd=parseInt(slicedText);    			//Converts text to a number
+			var slicedText = text.slice(searchIndex+1);   
 			alert("Item "+itemAlt+" added to Cart");
-			var previousTotal=$("#price_id").text();
-			console.log(previousTotal);
+			var priceToAdd=parseInt(slicedText);    			//Converts text to a number
+			var updatedTotal =0;
+			var nOfItems=0;
+			cartItemsPrices.push(priceToAdd);
+			for(var i=0;i<cartItemsPrices.length;i++){
+				updatedTotal=updatedTotal+cartItemsPrices[i];
+				nOfItems++;
+			}
+			$("#total_id").text(updatedTotal);
+			$("#no_id").text(nOfItems);		
 		},
 		
 		disabled:false,
