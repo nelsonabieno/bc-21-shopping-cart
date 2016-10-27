@@ -3,14 +3,15 @@
 */
 
 /*
-* variable declaration and 
+*  Global variable declaration and 
 *  initialization
 */
-	var cartItemsPrices = [];
-	var cartItemIds = [];
-	var nOfItems=0;
-	var updatedTotal=0;
-	var itemName;
+var cartItemsPrices = [];
+var cartItemIds = [];
+var nOfItems=0;
+var updatedTotal=0;
+var itemName;
+
 $(document).ready(function (e) {
 
 /* calls the toottip function  when document is ready */
@@ -31,24 +32,18 @@ $(document).ready(function (e) {
 		*	function detect if an element is dropped in cartDiv
 		*/
 		drop: function(event,ui) {
-			//ui.helper.hide("fade");
+
 			itemName=getItemName(ui);
 			var toDropId=getItemId(ui);
-			//console.log('itemName'+itemName);
 			var cartItemIdsLength= getLength(cartItemIds);
 			var ifItemExist= isItemIncart(toDropId);			//returns false if item is not in cart
 			if(ifItemExist===false) {
 				cartItemIds.push(toDropId);								
 				nOfItems++;		
-				//console.log("item pushed to cart");
 				var priceToAdd=getItemPrice(ui);
-				//console.log("priceToAdd"+priceToAdd);
 				alert("Item "+itemName+" added to Cart");
 				cartItemsPrices.push(priceToAdd);
-				//nOfItems=getLength(cartItemsPrices);
-				console.log("nOfItems after added to cart in drop fn"+nOfItems);
 				updatedTotal=getUpdatedTotal(cartItemsPrices);
-				//console.log("updatedTotal "+updatedTotal);
 				updateTotalButton(updatedTotal);
 				updateNumberButton(nOfItems);
 			}	
@@ -78,7 +73,6 @@ $(document).ready(function (e) {
 		over:function(event,ui) {
 			$("#cartMsg").remove();
 			$(this).append("<span id='cartMsg'>Drop It</span>");
-			console.log("nOfItems BEFORE another item is added to cart in over fn"+nOfItems);
 		},
 		/*
 		*	function to listen to pn drag out event
@@ -88,16 +82,12 @@ $(document).ready(function (e) {
 			$("#cartMsg").remove();
 			$(this).append("<span id='cartMsg'>NOOOOOO!</span>");
 			itemName=getItemName(ui);
-			//console.log("itemName out"+itemName);
 			alert("Item "+itemName+" removed from Cart");
-			//nOfItems=getLength(cartItemsPrices);
 			var priceToRemove=getItemPrice(ui); 
 			var toRemoveId=getItemId(ui);
 			var  indexOfRemovePrice= getIndexOf(cartItemsPrices,priceToRemove);
 			var  indexOfRemoveId= getIndexOf(cartItemIds,toRemoveId);
-			console.log("the thief price to remove is located at "+indexOfRemovePrice);
-			console.log("the thief id to remove is located at "+indexOfRemoveId);
-
+		
 			if(indexOfRemovePrice > -1){
 				cartItemsPrices.splice(indexOfRemovePrice, 1);
 			}
@@ -107,21 +97,15 @@ $(document).ready(function (e) {
 			}	
 
 			if(updatedTotal>0) {
-				console.log("updatedTotal before subtraction"+updatedTotal);
-				console.log("priceToRemove "+priceToRemove);
 				if(updatedTotal>=priceToRemove) {
 					var subtractionResult=updatedTotal-priceToRemove;
 					updatedTotal=updatedTotal-priceToRemove;
 					updateTotalButton(subtractionResult);
-					console.log("updatedTotal after subtraction using var subtractionResult = updatedTotal-priceToRemove"+updatedTotal);
-					console.log("updatedTotal after subtraction using updatedTotal=updatedTotal-priceToRemove; ="+subtractionResult);
-					console.log("updatedTotal BUTTON was updated using var subtractionResult = updatedTotal-priceToRemove "+updatedTotal);
 				}
 			}
 			
 			if (nOfItems>0) {
 				nOfItems=nOfItems-1;	
-				console.log("nOfItems before number button post "+nOfItems);
 				updateNumberButton(nOfItems);
 			}
 			else {
@@ -170,10 +154,8 @@ function getItemId(ui) {
 *	returns a number
 */
 function getItemName(ui) {
-	//console.log("in fn getItemName ui="+ui);
 	var itemAlt=$(ui.draggable).attr("alt");
 	return itemAlt;
-	//console.log("itemAlt="+itemAlt);
 }
 /*
 *	function getLength to get a parameter
@@ -205,17 +187,10 @@ function getItemPrice(ui) {
 */
 function getUpdatedTotal(cartItemsPrices) {
 	var cartItemsPriceSize= getLength(cartItemsPrices);
-	console.log("cartItemsPriceSize array length ="+cartItemsPriceSize);
-	console.log("nOfItems var  ="+nOfItems);
-	//console.log("updatedTotal BEFORE addition operation ="+updatedTotal);
-	//if(cartItemsPriceSize===nOfItems){
-		var sum=0;
+	var sum=0;
 		for(var i=0;i<cartItemsPriceSize;i++){
-				console.log("item "+i+"="+cartItemsPrices[i]);
 				sum=sum+cartItemsPrices[i];
 		}
-	//}
-	console.log("updatedTotal AFTER addition operation ="+sum);
 	return sum;
 }
 /*
@@ -231,9 +206,7 @@ function updateTotalButton(updatedTotal) {
 */
 function updateNumberButton(nOfItems) {
 	$("#no_id").text(nOfItems);	
-	//console.log("updatedNumberButton "+nOfItems);
 }
-
 /*
 *	function getIndexOf find in item
 *	@parameter:param
