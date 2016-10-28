@@ -8,6 +8,9 @@ Welcome to ShoppingCart by Nelson. An interactive frontend application.
 Shopping Cart is an application that enables users to be able to drag items into and out of the cart.
 The cart collate Total Cost and number of items in cart been displayed to user
 
+##Users
+
+Shopping Cart is an appr
 
 ## Installation
 
@@ -17,3 +20,13 @@ The cart collate Total Cost and number of items in cart been displayed to user
 3. Run the command  (`git clone https://github.com/nelsonabieno/bc-21-shopping-cart.git'`)
 4. Open folder bc-21-shopping-cart
 5. Open the index.html file 
+
+
+## The Front End Technologies 
+
+The Application is built with
+
+* Javascript
+* HTML
+* CSS
+* jQuery
