@@ -16,7 +16,7 @@ Shopping Cart is an application which can be used by online stores that wants to
 
 Online Store Users want more dynamic and interactive cart that **calculates number and total cost of items** on the spot as they **drag and drop or remove items in and out** of cart and also captures **motive of prospective buyers**.
 
-## Interesting Features
+## Other Interesting Features
 
 The application is able to capture the motive of the buyers when
 *   The User wants to buy an item by dragging it towards the cart **(Low Purchasing Interest)**.
