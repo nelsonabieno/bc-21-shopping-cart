@@ -1,3 +1,117 @@
+#content ._sides {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0px auto;
+    margin-top: 20px;
+    padding: 20px 20px;
+}
+
+#content ._sides ._lhs {
+}
+
+._sides ._lhs h2 {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0px;
+    display: block;
+    background: rgba(31,147,200,1);
+    border-color: #46b8da;
+    border-radius: 5px;
+    color: #fff;
+    transition: .4s;
+    -webkit-transition: .4s;
+    text-transform: uppercase;
+}
+
+._sides ._lhs h2:hover {
+    background-color: rgba(255,255,255,1);
+    border: 1px solid rgba(31,147,200,1);
+    color: #31b0d5;
+}
+
+._sides ._lhs h2
+
+._sides ._lhs .row > div:hover {
+    cursor: move !important;
+}
+
+._sides ._lhs .row > div,
+._sides ._lhs h2 {
+    margin-bottom: 20px;
+}
+
+._sides ._lhs .product-price {
+    width: 100% !important;
+}
+
+._sides ._rhs h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    display: block;
+    margin-top: -8px;
+}
+
+._sides ._rhs h2 img {
+    height: 50px !important;
+    width: auto !important;
+}
+
+._sides ._rhs .zoomcart {
+    width: 100% !important;
+    border: 1px solid rgba(31,147,200,1);
+    position: absolute;
+    z-index: -1;
+}
+
+._rhs .cart_basket .row p {
+    width: 100%;
+    text-align: center;
+}
+
+._rhs .cart_basket .row p > a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+._rhs .cart_basket .row p > a.btn {
+    background-color: #ffffff !important;
+    color: #1F93AE;
+}
+
+._rhs .cart_basket .row p > a:last-child {
+    margin-left: 10px;
+}
+
+#cartMsg {
+    top: 0;
+    position: absolute;
+    right: 0;
+    font-size: 14px !important;
+    padding: 4px 10px;
+    margin: 0px 0px 0px 0px;
+    color: #fff !important;
+    background: rgba(31,147,200,1) !important;
+    border-top-right-radius: 5px;
+}
+
+#cartMsg .warm {
+    background: #4cae4c !important;
+}
+
+.resizeImage > img,
+.resizeImage > .product-price {
+    width: 74px !important;
+    height: auto !important;
+}
+
+.resizeImage > .product-price {
+    max-width: 75px !important;
+    font-size: 10px;
+}
+
 .zoomcart{
     font-size: 197px !important;
     width: 800px !important;
@@ -36,12 +150,7 @@ img{
 }
 
 .highlight{
-    background-color: yellow;
-}
-
-#cartMsg{
-    color: blue !important;
-    font-size: 30px !important;
+    background-color: rgba(31,147,200,0.07) ;
 }
 
 .product-price {

@@ -14,8 +14,16 @@ var itemName;
 
 $(document).ready(function (e) {
 
+	var $main_items = $('._lhs .row').html();
+
+	/* this handles the mouse up on the body */
+	$("#content").mouseup(function(){
+		//$('._lhs .row').html($main_items);
+        //console.log($main_items);
+	});
+
 /* calls the toottip function  when document is ready */
-	$('[data-toggle="tooltip"]').tooltip();	
+	$('[data-toggle="tooltip"]').tooltip();
 /*
 * 	Make Items Draggable
 */
@@ -31,21 +39,21 @@ $(document).ready(function (e) {
 		*	function to listen to drop event
 		*	function detect if an element is dropped in cartDiv
 		*/
-		drop: function(event,ui) {
+		drop: function(event, ui) {
 
-			itemName=getItemName(ui);
-			var toDropId=getItemId(ui);
-			var cartItemIdsLength= getLength(cartItemIds);
-			var ifItemExist= isItemIncart(toDropId);			//returns false if item is not in cart
-			if(ifItemExist===false) {
+			itemName = getItemName(ui);
+			var toDropId = getItemId(ui);
+			var cartItemIdsLength = getLength(cartItemIds);
+			var ifItemExist = isItemIncart(toDropId);			//returns false if item is not in cart
+			if(ifItemExist === false) {
 				cartItemIds.push(toDropId);								
 				nOfItems++;		
-				var priceToAdd=getItemPrice(ui);
-				alert("Item "+itemName+" added to Cart");
+				var priceToAdd = getItemPrice(ui);
 				cartItemsPrices.push(priceToAdd);
 				updatedTotal=getUpdatedTotal(cartItemsPrices);
 				updateTotalButton(updatedTotal);
 				updateNumberButton(nOfItems);
+                $(ui.draggable).addClass("resizeImage");
 			}	
 		},
 		disabled:false,
@@ -55,7 +63,7 @@ $(document).ready(function (e) {
 		*/
 		activate:function(event,ui){
 			$("#cartMsg").remove();
-			$(this).append("<span id='cartMsg'>Drop Item Here </span>");
+			$(this).append("<span id='cartMsg' class='temprate'>Drop Item Here </span>");
 		},
 		/*
 		*	function to listen to deactivate event
@@ -63,7 +71,7 @@ $(document).ready(function (e) {
 		*/
 		deactivate:function(event,ui) {
 			$("#cartMsg").remove();
-			$(this).append("<span id='cartMsg'>You Know You Want It</span>");
+			$(this).append("<span id='cartMsg' class='cool'>You Know You Want It</span>");
 		},
 
 		/*
@@ -72,7 +80,7 @@ $(document).ready(function (e) {
 		*/
 		over:function(event,ui) {
 			$("#cartMsg").remove();
-			$(this).append("<span id='cartMsg'>Drop It</span>");
+			$(this).append("<span id='cartMsg' class='warm'>Drop It</span>");
 		},
 		/*
 		*	function to listen to pn drag out event
@@ -82,11 +90,12 @@ $(document).ready(function (e) {
 			$("#cartMsg").remove();
 			$(this).append("<span id='cartMsg'>NOOOOOO!</span>");
 			itemName=getItemName(ui);
-			alert("Item "+itemName+" removed from Cart");
 			var priceToRemove=getItemPrice(ui); 
 			var toRemoveId=getItemId(ui);
 			var  indexOfRemovePrice= getIndexOf(cartItemsPrices,priceToRemove);
 			var  indexOfRemoveId= getIndexOf(cartItemIds,toRemoveId);
+
+            $(ui.draggable).removeClass("resizeImage");
 		
 			if(indexOfRemovePrice > -1){
 				cartItemsPrices.splice(indexOfRemovePrice, 1);
@@ -135,8 +144,8 @@ function isItemIncart(toDropId) {
 *	@parameter:noOfItemDivs
 */
 function makeDraggable(noOfItemDivs) {
-	for(var i=1;i<=noOfItemDivs;i++) { 
-		$('#item'+i).draggable(); 		//Attach draggable property 
+	for(var i=1;i<=noOfItemDivs;i++) {
+		$('#item'+i).draggable(); 		//Attach draggable property
 	}
 }
 /*
@@ -175,8 +184,8 @@ function getLength(param) {
 *	returns the Items Price
 */
 function getItemPrice(ui) {
-	var itemNameAndPrice=$(ui.draggable).text();   
-	var searchIndex = itemNameAndPrice.indexOf("₦");  			//Gets the indexOf ₦ in defined text 
+	var itemNameAndPrice=$(ui.draggable).text();
+	var searchIndex = itemNameAndPrice.indexOf('N');  			//Gets the indexOf ₦ in defined text
 	var slicedText = itemNameAndPrice.slice(searchIndex+1);   
 	return parseInt(slicedText);    							//Converts text to a number
 }
@@ -198,7 +207,7 @@ function getUpdatedTotal(cartItemsPrices) {
 *	@parameter:updatedTotal
 */
 function updateTotalButton(updatedTotal) {
-	$("#total_id").text('₦'+updatedTotal);
+	$("#total_id").text('N'+updatedTotal);
 }
 /*
 *	function updateNumberButton to update Number of items Button
