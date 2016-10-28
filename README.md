@@ -1,9 +1,9 @@
-# ShoppingCart
+# Shopping Cart
 
 
 Welcome to ShoppingCart by Nelson. An interactive frontend application.
 
-##About ShoppingCart
+##About Shopping Cart
 
 Shopping Cart is an application that enables users to be able to drag items into and out of the cart.
 The cart collate Total Cost and number of items in cart been displayed to user
@@ -14,7 +14,14 @@ Shopping Cart is an application which can be used by online stores that wants to
 
 ##Why Shopping Cart?
 
-Users want more dynamic and interactive cart that calculates number and total cost of items on the spot as they drag and drop or remove items in and out of cart 
+Online Store Users want more dynamic and interactive cart that calculates number and total cost of items on the spot as they drag and drop or remove items in and out of cart and also captures ##motive of prospective buyers.
+
+## Interesting Feature
+The application is able to capture the motive of the buyers when
+1. The User wants to buy an item by dragging it towards the cart ##(Low Purchasing Interest).
+2. The User drags the item on the cart ##(High Purchasing Interest).
+3. The User drops the item in cart ##(Very High Purchasing Interest).
+4. The User removes the item from cart ##(Very Low Purchasing Interest).
 
 ## A working demo of this app can be found at (https://nelsonabieno.github.io/bc-21-shopping-cart/)
 
