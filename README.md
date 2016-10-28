@@ -23,8 +23,8 @@ Users want more dynamic and interactive cart that calculates number and total co
 1. The User should have git running on his PC  (https://help.github.com/desktop/guides/getting-started/installing-github-desktop/)
 2. Use command prompt to change directory to any suitable directory  
 3. Run the command  (`git clone https://github.com/nelsonabieno/bc-21-shopping-cart.git'`)
-4. Open folder bc-21-shopping-cart
-5. Open the index.html file 
+4. Open folder bc-21-shopping-cart which is the name of the repository you cloned
+5. Open the index.html file inseide folder bc-21-shopping-cart to launch the application
 
 
 ## The Front End Technologies 
@@ -40,7 +40,7 @@ The Application is built with
 
 1. Fork it ( https://github.com/nelsonabieno/bc-21-shopping-cart/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
