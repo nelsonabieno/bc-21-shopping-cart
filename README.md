@@ -17,11 +17,12 @@ Shopping Cart is an application which can be used by online stores that wants to
 Online Store Users want more dynamic and interactive cart that calculates number and total cost of items on the spot as they drag and drop or remove items in and out of cart and also captures ##motive of prospective buyers.
 
 ## Interesting Feature
+
 The application is able to capture the motive of the buyers when
-1. The User wants to buy an item by dragging it towards the cart ##(Low Purchasing Interest).
-2. The User drags the item on the cart ##(High Purchasing Interest).
-3. The User drops the item in cart ##(Very High Purchasing Interest).
-4. The User removes the item from cart ##(Very Low Purchasing Interest).
+*   The User wants to buy an item by dragging it towards the cart (Low Purchasing Interest).
+*   The User drags the item on the cart (High Purchasing Interest).
+*   The User drops the item in cart (Very High Purchasing Interest).
+*   The User removes the item from cart (Very Low Purchasing Interest).
 
 ## A working demo of this app can be found at (https://nelsonabieno.github.io/bc-21-shopping-cart/)
 
